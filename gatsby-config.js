@@ -5,7 +5,27 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    '@context': 'http://schema.org',
+    name: 'Hesam Bayat',
+    description: 'Hesam Bayat personal blog',
+    url: 'https://hesambayat.com',
+    image: 'https://hesambayat.com/images/hesam-bayat.png',
+    author: {
+      name: 'Hesam Bayat'
+    },
+    publisher: {
+      name: 'Hesam Bayat',
+      url: 'https://hesambayat.com',
+      logo: 'https://hesambayat.com/images/hesam-bayat-sole-proprietorship.png',
+    },
+    social: {
+      twitter: '@hsmbyt',
+      fbAppID: '',
+    },
+  },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
@@ -15,11 +35,29 @@ module.exports = {
         previews: true, // (optional, activated Previews. Default: false)
         pages: [{ // (optional, builds pages dynamically)
           type: 'Post',         // TypeName from prismic
-          match: '/blog/:uid',  // Pages will be generated under this pattern
-          path: '/blog',        // Placeholder page for unpublished documents
+          match: '/:uid',  // Pages will be generated under this pattern
+          path: '/',        // Placeholder page for unpublished documents
           component: require.resolve('./src/templates/post.js'),
         }],
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#000000',
+        // Enables 'Add to Homescreen' prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: 'standalone',
+        icon: 'static/meow-party.gif', // This path is relative to the root of the site.
+        // An optional attribute which provides support for CORS check.
+        // If you do not provide a crossOrigin option, it will skip CORS for manifest.
+        // Any invalid keyword or empty string defaults to `anonymous`
+        crossOrigin: `use-credentials`,
+      },
+    },
   ]
 }
