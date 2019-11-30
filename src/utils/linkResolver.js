@@ -1,13 +1,12 @@
+export default doc => {
+  switch (doc.type) {
+    case 'category':
+      return `/category/${doc.uid}`
+    case 'post':
+    case 'page':
+      return `/${doc.uid}`
 
-export const linkResolver = doc => {
-  if (doc.type === 'category') {
-    return `/category/${doc.uid}`
+    default:
+      return '/'
   }
-  if (doc.type === 'post') {
-    return `/blog/${doc.uid}`
-  }
-  if (doc.type === 'page') {
-    return `/${doc.uid}`
-  }
-  return '/'
 }
