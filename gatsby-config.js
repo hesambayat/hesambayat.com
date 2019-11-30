@@ -9,7 +9,7 @@ module.exports = {
     '@context': 'http://schema.org',
     name: 'Hesam Bayat',
     description: 'Hesam Bayat personal blog',
-    url: 'https://hesambayat.com',
+    siteUrl: 'https://hesambayat.com',
     image: 'https://hesambayat.com/images/hesam-bayat.png',
     author: {
       name: 'Hesam Bayat'
@@ -26,13 +26,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-prismic-graphql',
       options: {
         repositoryName: 'hesambayatcom', // (REQUIRED, replace with your own)
         accessToken: 'MC5YZUFhZkJFQUFES3dLbUFV.ECZ-K--_vWYE77-977-977-977-9eO-_ve-_vW_vv73vv73vv70677-977-9Gu-_ve-_ve-_vXHvv73vv73vv73vv73vv73vv70', // (optional API access token)
         path: '/preview', // (optional preview path. Default: /preview)
-        previews: true, // (optional, activated Previews. Default: false)
+        previews: false, // (optional, activated Previews. Default: false)
         pages: [{ // (optional, builds pages dynamically)
           type: 'Post',         // TypeName from prismic
           match: '/:uid',  // Pages will be generated under this pattern
@@ -42,7 +43,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-starter-default',
         short_name: 'starter',
@@ -55,9 +56,9 @@ module.exports = {
         icon: 'static/meow-party.gif', // This path is relative to the root of the site.
         // An optional attribute which provides support for CORS check.
         // If you do not provide a crossOrigin option, it will skip CORS for manifest.
-        // Any invalid keyword or empty string defaults to `anonymous`
-        crossOrigin: `use-credentials`,
+        // Any invalid keyword or empty string defaults to 'anonymous'
+        crossOrigin: 'use-credentials',
       },
-    },
+    }
   ]
 }

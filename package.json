@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "npm run clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run clean && npm run develop",
@@ -17,6 +17,7 @@
     "gatsby": "^2.18.4",
     "gatsby-plugin-manifest": "^2.2.30",
     "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-sitemap": "^2.2.22",
     "gatsby-source-prismic-graphql": "^3.3.1",
     "prismic-reactjs": "^1.1.2",
     "react": "^16.12.0",

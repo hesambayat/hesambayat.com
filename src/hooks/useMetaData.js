@@ -1,6 +1,9 @@
 export default (data, custom) => {
   const metadata = { ...data, ...custom }
-  const markup = { ...metadata, social: undefined }
+  // normilize page url
+  metadata.url = metadata.url || metadata.siteUrl
+
+  const markup = { ...metadata, social: undefined, siteUrl: undefined }
   const isArticle = metadata['@type'] === 'Article'
 
   if (isArticle === false) {

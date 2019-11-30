@@ -11,7 +11,7 @@ export default props =>
           siteMetadata {
             name
             description
-            url
+            siteUrl
             image
             author {
               name
