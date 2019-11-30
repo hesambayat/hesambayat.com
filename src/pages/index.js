@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import { RichText } from 'prismic-reactjs'
 import * as Component from '../components'
 
 export default ({ data }) => {
@@ -8,13 +9,20 @@ export default ({ data }) => {
 
   return (
     <>
+      <Component.Schema
+        markup={{
+        }}
+      />
       <Component.HeaderPrimary />
       {data.prismic.allPosts.edges.map(item => {
-        console.log('%cDEBUG:%c item', 'color:aqua', 'color:deeppink', item)
         return (
-          <h3 key={item.node._meta.uid}>
-            <Link to={`/blog/${item.node._meta.uid}`}>{item.node.title[0].text}</Link>
-          </h3>
+          <div className="post" key={item.node._meta.uid}>
+            <h3>
+              <Link to={`/${item.node._meta.uid}`}>{RichText.asText(item.node.title)}</Link>
+            </h3>
+            <Component.Date date={item.node._meta.lastPublicationDate} />
+            {RichText.render(item.node.excerpt)}
+          </div>
         )
       })}
       <Component.Footer />
@@ -30,9 +38,11 @@ export const query = graphql`
         node {
           title
           content
+          excerpt
           _meta {
             uid
             tags
+            firstPublicationDate
             lastPublicationDate
           }
         }
