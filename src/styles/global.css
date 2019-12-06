@@ -1,0 +1,72 @@
+/* Site header */
+.site-header {
+  margin-top: calc(var(--spacing) * 2);
+}
+
+.site-header h1 {
+  margin-bottom: var(--spacing);
+}
+
+.site-header h5 {
+  position: relative;
+  margin: 0 0 calc(var(--spacing) * 3);
+}
+
+.site-header h5 a {
+  color: inherit;
+}
+
+.site-header h5 a::before {
+  content: "\261C";
+  position: absolute;
+  left: calc(var(--spacing) * -0.75);
+  top: 50%;
+  font-size: 50%;
+  line-height: 0;
+  opacity: 0;
+  transition: all 500ms ease;
+}
+
+.site-header h5 a:hover::before {
+  opacity: 1;
+}
+
+@media (min-width: 992px) {
+  .site-header h5 a::before {
+    font-size: 85%;
+    left: calc(var(--spacing) * -1);
+  }
+
+  .site-header h5 a:hover::before {
+    transform: translateX(-50%);
+  }
+}
+
+/* Bio */
+.biography {
+  margin-bottom: calc(var(--spacing) * 3);
+}
+
+.avatar {
+  display: block;
+  height: calc(var(--spacing) * 2);
+  width: calc(var(--spacing) * 2);
+  margin-right: calc(var(--spacing) * 0.75);
+  border-radius: var(--spacing);
+}
+
+/* Footer */
+.site-footer {
+  color: var(--color-body-alt);
+  margin-top: calc(var(--spacing) * 3);
+}
+
+/* Post */
+.post {
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+/* Spacing */
+.mb-0 {
+  margin-bottom: 0;
+}

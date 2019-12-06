@@ -14,17 +14,20 @@ export default ({ data }) => {
         }}
       />
       <Component.HeaderPrimary />
-      {data.prismic.allPosts.edges.map(item => {
-        return (
-          <div className="post" key={item.node._meta.uid}>
-            <h3>
-              <Link to={`/${item.node._meta.uid}`}>{RichText.asText(item.node.title)}</Link>
-            </h3>
-            <Component.Date date={item.node._meta.lastPublicationDate} />
-            {RichText.render(item.node.excerpt)}
-          </div>
-        )
-      })}
+      <Component.Bio />
+      <div className="container">
+        {data.prismic.allPosts.edges.map(item => {
+          return (
+            <div className="post" key={item.node._meta.uid}>
+              <h3>
+                <Link to={`/${item.node._meta.uid}`}>{RichText.asText(item.node.title)}</Link>
+              </h3>
+              <Component.Date date={item.node._meta.lastPublicationDate} />
+              {RichText.render(item.node.excerpt)}
+            </div>
+          )
+        })}
+      </div>
       <Component.Footer />
     </>
   )

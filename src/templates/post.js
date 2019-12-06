@@ -24,9 +24,14 @@ export default ({ data }) => {
           "url": `https://hesambayat.com/${post._meta.uid}`
         }} />
       <Component.HeaderSecondary />
-      {RichText.render(post.title)}
-      <Component.Date date={post._meta.lastPublicationDate} />
-      {RichText.render(post.content)}
+      <div className="post">
+        <div className="container">
+          {RichText.render(post.title)}
+          <Component.Date date={post._meta.lastPublicationDate} />
+          {RichText.render(post.content)}
+        </div>
+      </div>
+      <Component.Bio />
       <Component.Footer />
     </>
   )

@@ -1,3 +1,4 @@
+import './global.css'
 import './variables.css'
 import './normalize.css'
 import './grids.css'

@@ -7,9 +7,17 @@
  * 1. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
+html {
   line-height: var(--spacing);
   -webkit-text-size-adjust: 100%; /* 1 */
+  box-sizing: border-box;
+  background-color: var(--color-body--background);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 /* Sections
@@ -51,8 +59,17 @@ hr {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  padding: 1em !important;
+  font-family: Courier, "Courier New", monospace; /* 1 */
+  font-size: 0.875em; /* 2 */
+  padding: 1em !important;
+  margin: var(--spacing) 0;
+  border: 1px solid #3f4d61 !important;
+  border-radius: 3px;
+  letter-spacing: normal;
+  background-color: #313d4c;
+  color: #abb2bf;
+  overflow: auto;
 }
 
 /* Text-level semantics
@@ -64,6 +81,12 @@ pre {
 
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+a:visited {
+  color: var(--color-link-visited);
 }
 
 /**
