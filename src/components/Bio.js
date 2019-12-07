@@ -8,7 +8,7 @@ export default () => (
           <img className="avatar" src="/images/hesam-bayat.png" width="48" height="48" alt="Hesam Bayat"/>
         </div>
         <div className="col">
-          <p className="mb-0">Two cents on software programming, coding tests and more. <br />Written by Hesam Bayat. Follow me on <a href="https://github.com/hesambayat">GitHub</a>.</p>
+          <p className="mb-0">Two cents on software programming, coding tests and more. Written by Hesam Bayat. Follow me on <a href="https://medium.com/@hsmbyt">Medium</a> and <a href="https://github.com/hesambayat">GitHub</a>.</p>
         </div>
       </div>
     </div>

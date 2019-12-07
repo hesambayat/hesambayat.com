@@ -66,6 +66,16 @@
   margin-bottom: calc(var(--spacing) * 2);
 }
 
+.note {
+  display: block;
+  width: 100%;
+  font-size: 0.9rem;
+  padding: calc(var(--spacing) * 0.75);
+  padding-left: calc((var(--spacing) * 0.75) - 4px);
+  border-left: 4px solid var(--color-note-border);
+  background-color: var(--color-note);
+}
+
 /* Spacing */
 .mb-0 {
   margin-bottom: 0;

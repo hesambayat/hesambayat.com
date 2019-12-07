@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run clean && gatsby build",
-    "deploy": "npm run clean && gatsby build --prefix-paths && ./node_modules/gh-pages/bin/gh-pages.js -d public",
+    "deploy": "npm run clean && gatsby build --prefix-paths && npx gh-pages -d public",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run clean && npm run develop",

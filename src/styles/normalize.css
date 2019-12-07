@@ -58,19 +58,32 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-pre {
-  padding: 1em !important;
+pre,
+pre.prettyprint {
   font-family: Courier, "Courier New", monospace; /* 1 */
-  font-size: 0.875em; /* 2 */
-  padding: 1em !important;
-  margin: var(--spacing) 0;
+  font-size: 0.9rem; /* 2 */
+  width: 100% !important;
+  padding: calc(var(--spacing) * 0.75) !important;
+  margin: var(--spacing) 0 !important;
   border: 1px solid #3f4d61 !important;
-  border-radius: 3px;
+  border-radius: 3px !important;
   letter-spacing: normal;
-  background-color: #313d4c;
+  background-color: #313d4c !important;
   color: #abb2bf;
   overflow: auto;
 }
+
+pre .str, code .str { color: #65B042; } /* string  - green */
+pre .kwd, code .kwd { color: #E28964; } /* keyword - dark pink */
+pre .com, code .com { color: #AEAEAE; font-style: italic; } /* comment - gray */
+pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+pre .pun, code .pun { color: #fff; } /* punctuation - white */
+pre .pln, code .pln { color: #fff; } /* plaintext - white */
+pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
 
 /* Text-level semantics
    ========================================================================== */

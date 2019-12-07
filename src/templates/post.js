@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { RichText } from 'prismic-reactjs'
+import { RichText, Elements } from 'prismic-reactjs'
 import * as Component from '../components'
 
 export default ({ data }) => {
@@ -9,6 +9,16 @@ export default ({ data }) => {
 
   const { post } = data.prismic
   if (!post) return 'Not found!'
+
+  const htmlSerializer = (type, element, content, children, key) => {
+    switch (type) {
+      case Elements.preformatted:
+        return React.createElement('pre', { className: 'prettyprint', key }, children)
+
+      default:
+        return null
+    }
+  }
 
   return (
     <>
@@ -26,13 +36,14 @@ export default ({ data }) => {
       <Component.HeaderSecondary />
       <div className="post">
         <div className="container">
-          {RichText.render(post.title)}
-          <Component.Date date={post._meta.lastPublicationDate} />
-          {RichText.render(post.content)}
+          <RichText render={post.title} />
+          <Component.DateWithUpdate published={post._meta.firstPublicationDate} updated={post._meta.lastPublicationDate} />
+          <RichText render={post.content} htmlSerializer={htmlSerializer} />
         </div>
       </div>
       <Component.Bio />
       <Component.Footer />
+      <Component.CodePrettify />
     </>
   )
 }

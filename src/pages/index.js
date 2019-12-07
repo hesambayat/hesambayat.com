@@ -20,10 +20,12 @@ export default ({ data }) => {
           return (
             <div className="post" key={item.node._meta.uid}>
               <h3>
-                <Link to={`/${item.node._meta.uid}`}>{RichText.asText(item.node.title)}</Link>
+                <Link to={`/${item.node._meta.uid}`}>
+                  {RichText.asText(item.node.title)}
+                </Link>
               </h3>
               <Component.Date date={item.node._meta.lastPublicationDate} />
-              {RichText.render(item.node.excerpt)}
+              <RichText render={item.node.excerpt} />
             </div>
           )
         })}

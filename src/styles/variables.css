@@ -7,6 +7,9 @@
 
   --color-link: #0074d9;
   --color-link-visited: #660099;
+
+  --color-note: #eef2f8;
+  --color-note-border: #e1e6ed;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -17,5 +20,8 @@
 
     --color-link: #cad900;
     --color-link-visited: #d800a2;
+
+    --color-note: #533f60;
+    --color-note-border: #735186;
   }
 } */
