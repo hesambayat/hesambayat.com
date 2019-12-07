@@ -76,6 +76,14 @@
   background-color: var(--color-note);
 }
 
+.announcement {
+  display: block;
+  width: 100%;
+  font-style: italic;
+  font-size: 1.3333333333rem;
+  line-height: 1.3333333333;
+}
+
 /* Spacing */
 .mb-0 {
   margin-bottom: 0;
