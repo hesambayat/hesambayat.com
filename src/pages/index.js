@@ -4,15 +4,11 @@ import { RichText } from 'prismic-reactjs'
 import * as Component from '../components'
 
 export default ({ data }) => {
-  console.log('%cDEBUG:%c data', 'color:aqua', 'color:deeppink', data)
   if (!data) return null
 
   return (
     <>
-      <Component.Schema
-        markup={{
-        }}
-      />
+      <Component.Schema />
       <Component.HeaderPrimary />
       <Component.Bio />
       <div className="container">
@@ -36,22 +32,20 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-{
-  prismic {
-    allPosts {
-      edges {
-        node {
-          title
-          content
-          excerpt
-          _meta {
-            uid
-            tags
-            firstPublicationDate
-            lastPublicationDate
+  query HomeQuery {
+    prismic {
+      allPosts {
+        edges {
+          node {
+            title
+            excerpt
+            _meta {
+              lastPublicationDate
+              uid
+            }
           }
         }
       }
     }
   }
-}`
+`

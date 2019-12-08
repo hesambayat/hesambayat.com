@@ -1,1 +1,1 @@
-export default date => new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+export default (date, format = { year: 'numeric', month: 'long', day: 'numeric' }) => new Date(date).toLocaleDateString('en-US', format)

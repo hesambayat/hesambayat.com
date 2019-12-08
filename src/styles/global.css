@@ -84,6 +84,17 @@
   line-height: 1.3333333333;
 }
 
+.gatsby-image-wrapper {
+  margin-bottom: var(--spacing);
+}
+
+@media (min-width: 1080px) {
+  .gatsby-image-wrapper.full-width {
+    width: calc(var(--spacing) * 40);
+    transform: translateX(calc((50% - (var(--spacing) * 12.5)) * -1));
+  }
+}
+
 /* Spacing */
 .mb-0 {
   margin-bottom: 0;

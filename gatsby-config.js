@@ -1,3 +1,5 @@
+const path = require('path')
+
 /**
  * Configure your Gatsby site with this file.
  *
@@ -22,7 +24,7 @@ module.exports = {
     social: {
       twitter: '@hsmbyt',
       fbAppID: '',
-    },
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -42,9 +44,18 @@ module.exports = {
         pages: [{ // (optional, builds pages dynamically)
           type: 'Post',         // TypeName from prismic
           match: '/:uid',  // Pages will be generated under this pattern
-          path: '/',        // Placeholder page for unpublished documents
+          path: '/post',        // Placeholder page for unpublished documents
           component: require.resolve('./src/templates/post.js'),
         }],
+      }
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'images'),
       }
     },
     {
@@ -63,7 +74,7 @@ module.exports = {
         // If you do not provide a crossOrigin option, it will skip CORS for manifest.
         // Any invalid keyword or empty string defaults to 'anonymous'
         crossOrigin: 'use-credentials',
-      },
+      }
     }
   ]
 }

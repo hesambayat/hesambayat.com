@@ -98,7 +98,13 @@ p {
 
 time {
   display: block;
-  font-size: 75%;
+  font-size: 65%;
   margin: 0 0 calc(var(--spacing) * 0.5);
   color: var(--color-body-alt);
+}
+
+@media (min-width: 376px) {
+  time {
+    font-size: 75%;
+  }
 }
