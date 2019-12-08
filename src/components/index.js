@@ -5,6 +5,7 @@ import DateWithUpdate from './DateWithUpdate'
 import Footer from './Footer'
 import HeaderPrimary from './HeaderPrimary'
 import HeaderSecondary from './HeaderSecondary'
+import NotFound from './NotFound'
 import Schema from './Schema'
 
 export {
@@ -15,5 +16,6 @@ export {
   Footer,
   HeaderPrimary,
   HeaderSecondary,
+  NotFound,
   Schema
 }

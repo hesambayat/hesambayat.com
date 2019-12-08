@@ -8,7 +8,7 @@ export default ({ data }) => {
   if (!data) return 'loading...'
 
   const { post } = data.prismic
-  if (!post) return 'Not found!'
+  if (!post) return <Component.NotFound />
 
   const htmlSerializer = (type, element, content, children, key) => {
     switch (type) {
