@@ -66,7 +66,7 @@ export default ({ data }) => {
       </div>
       <Component.Bio />
       <Component.Footer />
-      <Component.CodePrettify />
+      {post.has_code === 'Yes' && <Component.CodePrettify />}
     </>
   )
 }
@@ -76,6 +76,8 @@ export const query = graphql`
     prismic {
       post(lang:"en-us", uid: $uid) {
         title
+        has_code
+        excerpt
         image
         imageSharp {
           publicURL
@@ -104,7 +106,6 @@ export const query = graphql`
             }
           }
         }
-        excerpt
         _meta {
           uid
           tags
