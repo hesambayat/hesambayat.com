@@ -10,6 +10,9 @@
 
   --color-note: #eef2f8;
   --color-note-border: #e1e6ed;
+
+  --color-code: #313d4c;
+  --color-code-background: #f6faff;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -23,5 +26,8 @@
 
     --color-note: #533f60;
     --color-note-border: #735186;
+
+    --color-code: #cfd0d2;
+    --color-code-background: #36404d;
   }
 } */

@@ -66,6 +66,17 @@
   margin-bottom: calc(var(--spacing) * 2);
 }
 
+.code {
+  font-family: Courier, "Courier New", monospace;
+  font-size: 0.9rem;
+  padding: 0 calc(var(--spacing) * 0.125) !important;
+  border-radius: 2px !important;
+  letter-spacing: normal;
+  white-space: nowrap;
+  background-color: var(--color-code-background) !important;
+  color: var(--color-code);
+}
+
 .note {
   display: block;
   width: 100%;
