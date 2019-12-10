@@ -46,17 +46,24 @@ export default ({ data }) => {
               }
 
               if (slice.type === 'image') {
-                const fluid = slice.primary.imageBlockSharp.childImageSharp ? slice.primary.imageBlockSharp.childImageSharp.fluid : {
-                  aspectRatio: slice.primary.imageBlock.dimensions.width / slice.primary.imageBlock.dimensions.height,
-                  base64: "",
-                  sizes: "",
-                  src: slice.primary.imageBlockSharp.publicURL,
-                  srcSet: "",
-                  srcSetWebp: "",
-                  srcWebp: "",
+
+                if (slice.primary.imageBlockSharp.childImageSharp) {
+                  return <Img key={`slice-${idx}`} fluid={slice.primary.imageBlockSharp.childImageSharp.fluid} className={slice.label} />
                 }
 
-                return <Img key={`slice-${idx}`} fluid={fluid} className={slice.label} />
+                return (
+                  <div key={`slice-${idx}`} className={`image-wrapper ${slice.label}`}>
+                    <div style={{
+                      paddingTop: `${(slice.primary.imageBlock.dimensions.height / slice.primary.imageBlock.dimensions.width) * 100}%`
+                    }} />
+                    <img
+                      src={slice.primary.imageBlockSharp.publicURL}
+                      alt={slice.primary.imageBlock.alt}
+                      width={slice.primary.imageBlock.dimensions.width}
+                      height={slice.primary.imageBlock.dimensions.height}
+                    />
+                  </div>
+                )
               }
 
               return null
