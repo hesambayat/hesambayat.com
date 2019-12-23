@@ -9,7 +9,7 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     '@context': 'http://schema.org',
-    name: 'Hesam Bayat',
+    name: 'Hesam Bayat — Blog',
     description: 'Hesam Bayat personal blog',
     siteUrl: 'https://hesambayat.com',
     image: 'https://hesambayat.com/images/hesam-bayat.png',
@@ -29,7 +29,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve:'gatsby-plugin-sitemap',
+      resolve: 'gatsby-plugin-sitemap',
       options: {
         exclude: ['/preview']
       }
@@ -75,6 +75,26 @@ module.exports = {
         // Any invalid keyword or empty string defaults to 'anonymous'
         crossOrigin: 'use-credentials',
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: 'UA-64346230-9',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ['/preview/**'],
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'hesambayat.com',
+      },
     }
   ]
 }

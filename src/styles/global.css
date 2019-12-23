@@ -61,6 +61,13 @@
   margin-top: calc(var(--spacing) * 3);
 }
 
+.site-footer svg {
+  fill: currentColor;
+  width: calc(var(--spacing) * 0.5);
+  height: calc(var(--spacing) * 0.5);
+  margin-right: 0.25em;
+}
+
 /* Post */
 .post {
   margin-bottom: calc(var(--spacing) * 2);
